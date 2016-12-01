@@ -25,6 +25,7 @@ box-sizing: border-box;
 
 header {
 	margin-top:-30px; height:50px;
+    margin-bottom: 60px;
 }
 
 html {
@@ -43,23 +44,23 @@ h1 {
 
   #telephone {
       color:indianred;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 900; 
   } 
 
  .main-menu li {
 	  float:left;
-	  padding:17px;
+	  padding:11px;
 	  list-style-type: none;
 	  padding-top: 5px;
 	  position:relative;
     display:block;
  }
 
+
 .main-menu li a {
-	font-size: 16px;
+	font-size: 18px;
 	display:block;
-	text-shadow:1px 1px 1px rgba(0,0,0,0.75);
 }
 
 .main-menu ul{
@@ -127,23 +128,24 @@ h1 {
 
 .section1 {
 	margin-top: 40px;
-	   background-color: lightgreen;
+	   background-color: mediumseagreen;
 	   padding-bottom: 15px;
 	   padding-top: 40px;
-	   min-height: 100%;
+	   min-height: 70%;
 	  }
 
  .section2 {
 	margin: 40px 0;
 	   padding-bottom: 15px;
 	   padding-top: 40px;
-	   min-height: 100%;
-	   background-color: lightgray;
+	   min-height: 70%;
+	   background-color: #DCDCDC;
  }
 
 .column-centered {
 	text-align: center;
 	margin-bottom: 3em;
+    padding: 0 1em;
 }
 
 
@@ -153,8 +155,15 @@ opacity: 0.8;
 
 h3 {
 	color: green;
-	font-size: 24px;
+	font-size: 3em;
 }
+
+h4 {
+	color: white;
+    font-weight: bold; 
+	font-size: 25px;
+}
+
 
 h5 {
 	color: green;
@@ -164,7 +173,7 @@ h5 {
 
   .section2 img {
 	filter: grayscale(100%); 
-	height: 80px;
+	height: 100px;
 	display: block;
     margin-left: auto;
     margin-right: auto 
@@ -174,7 +183,7 @@ h5 {
 .main-menu a{
     color:gray;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 2em;
 }
 
 footer a {
@@ -189,9 +198,9 @@ footer a {
 footer {
 	background: #222;
 	color: #eee;
-	font-size: 12px;
+	font-size: 1em;
 	padding-top:5px;
-	height: 80px;
+	height: 200px;
 }
 #left-footer {
 	padding-left:10px;
@@ -201,6 +210,13 @@ footer {
 	padding-bottom:30px;
 }
 
+#right-footer  li  {
+	    list-style: none;
+        display: block;
+        float: left;
+      padding-right:15px;
+      
+}
 
 
 footer p a {
@@ -235,45 +251,117 @@ tr:hover {
    
 
 .wnd-modal {
-    position:absolute;
-    left:-9999px;
-    opacity:0; 
-    -webkit-transition:0.25s linear opacity;
-}
-
-
-#apply a:hover .wnd-modal { 
-	position: fixed;
-    width: 100%;
-    height: 100%;
-	left:0; 
-    opacity:1; 
-	background:lightgray;
-	margin-top: 10px;
-}
-
-.wnd-modal .wnd {
-    background: #fff;
-    margin: 10% auto;
-    width: 60%;
-    padding: 1em;
-    position: relative;
-}
-
-.wnd-modal .wnd-body {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
     overflow: auto;
 }
 
-.wnd-modal .wnd-header {
-    padding-bottom: 1em;
+
+.wnd-modal:target { 
+	opacity:1;
+    pointer-events: auto;
 }
 
-.wnd-modal .close {
+.wnd-modal .wnd {
+    width: 70%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+ }
+
+.close {
+    background: #606061;
+   
+    line-height: 25px;
     position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close a {
+    text-decoration: none;
+     color: #FFFFFF;
+}
+
+
+.close:target .wnd-modal {
+    position: fixed;
     top: 0;
     right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
 }
 
-.wnd-modal .close:hover {
-    cursor: pointer;
+
+/** modal form **/
+
+.brief > div {
+    margin: 10em 0;
+}
+
+label.checkbox-label{
+   display:block;
+}
+#textareaField {
+	display:block;
+}
+
+input[type=submit] {
+    padding:10px; 
+    background:#006622; 
+    border:0 none;
+    cursor:pointer;
+       border-radius: 12px; 
+	color: white;
+	font-size: 14px;
+}
+input[type=submit]:hover {
+	background:#009922; 
+}
+
+input:hover {
+	cursor:pointer; 
+}
+
+.buttons {
+	text-align:center;
+	padding-right: 50px;
+	padding-top: 10px;
+	
+}
+
+.container-thanks-page {
+	padding-top:10%;
+	text-align: center;
 }
